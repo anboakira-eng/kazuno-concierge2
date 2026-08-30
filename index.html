@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <meta name="theme-color" content="#06283D" />
   <title>かづのナビ｜道の駅かづの あんとらあ 観光コンシェルジェ</title>
   <link rel="manifest" href="/manifest.json" />
@@ -11,8 +11,8 @@
   <script src="https://unpkg.com/@babel/standalone@7.26.4/babel.min.js" crossorigin></script>
   <style>
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-    html, body { margin: 0; padding: 0; background: #d7e7f0; font-family: 'Hiragino Sans','Noto Sans JP',sans-serif; }
-    #root { min-height: 100vh; display: flex; align-items: stretch; justify-content: center; }
+    html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #d7e7f0; font-family: 'Hiragino Sans','Noto Sans JP',sans-serif; }
+    #root { height: 100dvh; display: flex; align-items: stretch; justify-content: center; }
     input:focus { outline: none; }
     button { font-family: inherit; }
   </style>
@@ -104,7 +104,7 @@
       }
 
       return (
-        <div style={{ maxWidth: 430, width: "100%", minHeight: "100vh", background: "#8CC0DE", display: "flex", flexDirection: "column", position: "relative", overflow: "hidden" }}>
+        <div style={{ maxWidth: 430, width: "100%", height: "100%", background: "#8CC0DE", display: "flex", flexDirection: "column", position: "relative", overflow: "hidden" }}>
           <div style={{ background: "#06283D", color: "#fff", padding: "12px 16px", display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
             <div style={{ display: "flex", alignItems: "flex-end" }}>
               <img src={TANPO} alt="たんぽ小町ちゃん" style={{ width: 40, height: 40, borderRadius: "50%", background: "#fff", objectFit: "cover", border: "2px solid #fff" }} />
@@ -139,7 +139,7 @@
           {tab === "coupons" && <Coupons />}
           {tab === "menu" && <MenuScreen />}
 
-          <div style={{ display: "flex", background: "#fff", borderTop: "1px solid #eee", flexShrink: 0 }}>
+          <div style={{ display: "flex", background: "#fff", borderTop: "1px solid #eee", flexShrink: 0, paddingBottom: "env(safe-area-inset-bottom)" }}>
             <TabBtn active={tab === "chat"} onClick={() => setTab("chat")} emoji="✨" label="コンシェルジェ" />
             <TabBtn active={tab === "coupons"} onClick={() => setTab("coupons")} emoji="🎫" label="クーポン" />
             <TabBtn active={tab === "menu"} onClick={() => setTab("menu")} emoji="🔍" label="さがす" />
