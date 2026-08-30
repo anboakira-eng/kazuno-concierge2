@@ -1,1 +1,17 @@
+{
+  "name": "かづのナビ｜鹿角観光コンシェルジェ",
+  "short_name": "かづのナビ",
+  "description": "道の駅かづの あんとらあ を拠点にした鹿角の観光コンシェルジェ",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#8CC0DE",
+  "theme_color": "#06283D",
+  "icons": [
+    {
+      "src": "https://em-content.zobj.net/source/apple/391/oden_1f362.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
 
